@@ -17,7 +17,7 @@ chest_pain = st.selectbox(
     ["heart related pain", "non heart related", "not heart pain", "asymptomatic pain"]
 )
 
-heart_pain = st.number_input("heart pain (numeric value)", min_value=50, max_value=250, value=120)
+heart_pain = st.number_input("heart pain(numeric value)", min_value=50, max_value=250, value=120)
 
 exercise_pain = st.selectbox(
     "exercise pain",
@@ -50,4 +50,5 @@ if st.button("predict"):
     else:
 
         st.success("Prediction: No Heart Disease Detected")
+
 
