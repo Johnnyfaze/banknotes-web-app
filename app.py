@@ -2,11 +2,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-from sklearn.pipeline import make_pipeline
 
 # Load the trained model
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+with open('model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 st.title("Heart Disease Prediction App")
 
@@ -51,3 +50,4 @@ if st.button("predict"):
     else:
 
         st.success("Prediction: No Heart Disease Detected")
+
