@@ -2,10 +2,11 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+from sklearn.pipeline import make_pipeline
 
 # Load the trained model
 with open('model.pkl', 'rb') as f:
-    pipeline = pickle.load(f)
+    model = pickle.load(f)
 
 st.title("Heart Disease Prediction App")
 
@@ -44,8 +45,9 @@ if st.button("predict"):
         "number of blood vessels": num_blood_vessels,
         "blood disorder": blood_disorder
     }])
-    prediction = pipeline.predict(input_df)
+    prediction = model.predict(input_df)
     if prediction[0] == 1:
         st.error("Prediction: Heart Disease Detected")
     else:
+
         st.success("Prediction: No Heart Disease Detected")
